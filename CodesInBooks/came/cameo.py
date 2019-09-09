@@ -1,5 +1,5 @@
 import cv2
-import	filters
+import filters
 from managers import WindowManager, CaptureManager
 
 
@@ -8,7 +8,8 @@ class Cameo(object):
     def __init__(self):
         self._windowManager = WindowManager('Cameo', self.onKeypress)
         self._captureManager = CaptureManager(cv2.VideoCapture(0), self._windowManager, True)
-        self._curveFilter = filters.BGRPortraCurveFilter()
+        # self._curveFilter = filters.BGRPortraCurveFilter()
+        self._curveFilter = filters.SharpenFilter()
 
     def onKeypress(self, keycode):
         """Handle a keypress.
