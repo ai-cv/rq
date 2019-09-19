@@ -4,7 +4,7 @@ import imutils
 
 
 img = cv2.pyrDown(cv2.imread("../data/imgs/hg.png", cv2.IMREAD_UNCHANGED))
-ret, thresh = cv2.threshold(cv2.cvtColor(img.copy(), cv2.COLOR_BGR2GRAY), 0, 112, cv2.THRESH_BINARY)
+ret, thresh = cv2.threshold(cv2.cvtColor(img.copy(), cv2.COLOR_BGR2GRAY), 127, 255, cv2.THRESH_BINARY)
 # contours = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 image, contours = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 # cv2.imshow("", contours)
